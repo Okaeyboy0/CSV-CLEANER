@@ -1,6 +1,6 @@
-# CSV-CLEANER
-A csv cleaner able to remove empty rows, empty columns if you want an even advanced version its possible.
-Please make sure to RUN   python -m streamlit run csv_cleaner.py  INSIDE THE TERMINAL AFTER PASTING CODE IN YOUR PREFERRED IDE.
+###### CSV-CLEANER##############
+#####A csv cleaner able to remove empty rows, empty columns if you want an even advanced version its possible.#############
+#####Please make sure to RUN   python -m streamlit run csv_cleaner.py  INSIDE THE TERMINAL AFTER PASTING CODE IN YOUR PREFERRED IDE.###########
 
 
 
