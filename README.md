@@ -1,24 +1,21 @@
-###### CSV-CLEANER##############
-#####A csv cleaner able to remove empty rows, empty columns if you want an even advanced version its possible.#############
-#####Please make sure to RUN   python -m streamlit run csv_cleaner.py  INSIDE THE TERMINAL AFTER PASTING CODE IN YOUR PREFERRED IDE.###########
+###### CSV-CLEANER ##############
+# A CSV cleaner able to remove empty rows, empty columns, and duplicates.
+# Run using: python -m streamlit run csv_cleaner.py
+#################################
 
+import streamlit as st
+import pandas as pd
 
+st.set_page_config(page_title="CSV Cleaner")
 
+st.title("🧹 CSV Cleaner Tool")
 
+uploaded_file = st.file_uploader("📂 Upload your CSV file", type="csv")
 
-    import streamlit as st
-    import pandas as pd
-
-    st.set_page_config(page_title="CSV Cleaner")
-
-    st.title("🧹 CSV Cleaner Tool")
-
-    uploaded_file = st.file_uploader("📂 Upload your CSV file", type="csv")
-
-    if uploaded_file:
-       df = pd.read_csv(uploaded_file)
-       st.subheader("🔍 Original Data")
-       st.dataframe(df)
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+    st.subheader("🔍 Original Data")
+    st.dataframe(df)
 
     st.subheader("🧼 Cleaning Options")
     remove_empty_rows = st.checkbox("Remove empty rows")
@@ -42,3 +39,5 @@
 
         csv = cleaned_df.to_csv(index=False).encode('utf-8')
         st.download_button("⬇️ Download Cleaned CSV", csv, "cleaned_file.csv", "text/csv")
+else:
+    st.info("Please upload a CSV file to begin.")
