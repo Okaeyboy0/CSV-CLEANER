@@ -1,8 +1,3 @@
-###### CSV-CLEANER ##############
-# A CSV cleaner able to remove empty rows, empty columns, and duplicates.
-# Run using: python -m streamlit run csv_cleaner.py
-#################################
-
 import streamlit as st
 import pandas as pd
 
